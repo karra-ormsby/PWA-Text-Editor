@@ -21,7 +21,7 @@ module.exports = () => {
       // Webpack plugin that generates our html file and injects our bundles. 
       new HtmlWebpackPlugin({
         template: './index.html',
-        title: 'JEST'
+        title: 'J.A.T.E'
       }),
       // Injects our custom service worker
       new InjectManifest({
@@ -29,17 +29,18 @@ module.exports = () => {
         swDest: 'src-sw.js',
       }),
       // Creates a manifest.json file.
-      // TODO: NEED TO CHNAGE INFO IN HERE
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'Just another text editor',
-        short_name: 'JEST',
-        description: 'Just another text editor',
-        background_color: '#7eb4e2',
-        theme_color: '#7eb4e2',
+        name: 'Just Another Text Editor',
+        short_name: 'J.A.T.E',
+        description: 'Take notes with JavaScript syntax highlighting!',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
         start_url: './',
         publicPath: './',
+        orientation: 'portrait',
+        display: 'standalone',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
